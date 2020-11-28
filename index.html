@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz-2-fandom repository</title>
+</head>
+<body>
+<h1>This is a repository for quiz 2 -->fandom</h1>
+
+<h2>The code is as follows:
+    var readlineSync = require("readline-sync");
+const chalk = require('chalk');
+var score = 0;
+
+var userName = readlineSync.question(chalk.cyan.bold("What's your name? "));
+
+console.log(chalk.yellow.underline("Welcome "  +  userName  +  " ,so Do You KNOW Amey?"));
+// data of high score
+var highScores =[
+{
+name:"Amey",
+score: 10,
+},
+{
+name:"Aniruddha",
+score:8,
+}
+]
+// play function
+
+
+function play(question,answer){
+
+
+var userAnswer = readlineSync.question(chalk.yellowBright.italic.bgMagenta(question));
+
+if (userAnswer.toUpperCase() === answer.toUpperCase()){
+const chalk = require('chalk');
+console.log(chalk.green.bgBlackBright('right!'));
+score=score+1;
+}else{
+
+console.log(chalk.red.bgRedBright('wrong!'));
+
+}
+
+console.log(chalk.magenta.bold('current score:' ), score);
+console.log(chalk.blue("--------------------------------"));
+}
+
+// array of objects
+
+
+var questions =[
+{
+question:
+"How many infinity stones are present in the marvel cinematic ? ",
+answer : "six"
+}, {
+question :"What is the suit made up of in avengers 3 and 4? ",
+answer:"nanotech"
+
+},{
+question : "Can hawkeye shoot precisely without looking(hint avengers) ",
+answer:"yes"
+
+},
+{
+question : "What year was the first Iron Man movie released, kicking off the Marvel Cinematic Universe? ",
+answer:"2008"},
+{
+question : "  What is the name of Thor’s hammer? ",
+answer:"Mjolnir"},
+{
+question : "In the Incredible Hulk, what does Tony tell Thaddeus Ross at the end of the film? ",
+answer:"That they are putting a team together"},
+{
+question : "What is Captain America’s shield made of? ",
+answer:"Vibranium"},
+{
+question : "Before becoming Vision, what is the name of Iron Man’s A.I. butler? ",
+answer:"J.A.R.V.I.S."},
+{
+question : "The Flerkens are a race of extremely dangerous aliens that resembles what? ",
+answer:"Cats"},
+{
+question:"What is the alien race Loki sends to invade Earth in The Avengers? ",
+answer:"The Chitauri"
+}];
+
+// loop
+
+for (var i=0 ; i<questions.length;  i++){
+var currentQuestion = questions[i];
+play(currentQuestion.question,
+currentQuestion.answer)
+
+}
+
+console.log(chalk.cyan('YAY! You SCORED: ') , score); 
+// Use Chalk.</h2>
+</body>
+</html>
